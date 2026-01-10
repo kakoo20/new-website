@@ -70,6 +70,46 @@
         </div>
     </div>
 </section>
+<section class="presentation-section">
+    <div class="content-box wide-box">
+        <h2><i class="fas fa-microchip"></i> L'Algorithme en 4 Étapes</h2>
+        <p>Voici comment le système traite l'information en temps réel pour assurer la détection :</p>
+
+        <div class="algo-container">
+            <div class="algo-step">
+                <div class="algo-number">1</div>
+                <div class="algo-text">
+                    <strong>Émission :</strong> 
+                    Le capteur HC-SR04 envoie une salve d'ultrasons (40 kHz) par la broche <strong>TRIG</strong>.
+                </div>
+            </div>
+
+            <div class="algo-step">
+                <div class="algo-number">2</div>
+                <div class="algo-text">
+                    <strong>Réception :</strong> 
+                    Le signal rebondit sur l'obstacle et revient au capteur par la broche <strong>ECHO</strong>.
+                </div>
+            </div>
+
+            <div class="algo-step">
+                <div class="algo-number">3</div>
+                <div class="algo-text">
+                    <strong>Traitement :</strong> 
+                    L'Arduino calcule le temps de vol ($t$) et le convertit en distance ($d = \frac{v \times t}{2}$), où $v$ est la vitesse du son.
+                </div>
+            </div>
+
+            <div class="algo-step alerte-step">
+                <div class="algo-number">4</div>
+                <div class="algo-text">
+                    <strong>Alerte :</strong> 
+                    Si $d < 30$ cm, le buzzer s'active et l'interface affiche l'alerte en rouge. Le servomoteur s'immobilise, les <strong>LED rouges</strong> s'allument et les <strong>LED vertes</strong> s'éteignent.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     
 

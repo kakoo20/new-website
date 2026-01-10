@@ -317,3 +317,54 @@ body {
 .download-card:hover .fa-download {
     opacity: 1;
 }
+
+.algo-container {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.algo-step {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    padding: 15px;
+    border-left: 4px solid var(--neon-cyan);
+    transition: transform 0.3s ease;
+}
+
+.algo-step:hover {
+    transform: translateX(10px);
+    background: rgba(0, 168, 204, 0.08);
+}
+
+.algo-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--neon-cyan);
+    min-width: 40px;
+    margin-right: 20px;
+    border-right: 1px solid rgba(0, 168, 204, 0.3);
+}
+
+.algo-text {
+    color: #eee;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.algo-text strong {
+    color: var(--neon-cyan);
+}
+
+/* Style spécial pour l'étape d'alerte */
+.alerte-step {
+    border-left-color: #ff4d4d; /* Rouge pour l'alerte */
+}
+
+.alerte-step .algo-number {
+    color: #ff4d4d;
+    border-right-color: rgba(255, 77, 77, 0.3);
+}
