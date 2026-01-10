@@ -123,9 +123,32 @@ body::before {
     gap: 5rem;
     background: radial-gradient(circle at 20% 50%, rgba(0, 168, 204, 0.1) 0%, transparent 50%);
 }
-
+/* Add this right after the .hero block */
+#hero-3d {
+    position: absolute;
+    width: 60%;         /* Adjust this to 100% if you want it centered */
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 0;         /* Places it behind the text */
+    pointer-events: none; /* Crucial: allows clicking buttons through the animation */
+    opacity: 0.8;
+}
+/* Update your existing .hero-content block */
 .hero-content {
     flex: 1;
+    position: relative; /* Added */
+    z-index: 2;         /* Added - higher than #hero-3d */
+}
+
+/* Also update your existing .identity-cards block (around line 154) */
+.identity-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 300px;
+    position: relative; /* Added */
+    z-index: 2;         /* Added */
 }
 
 .hero h1 {
