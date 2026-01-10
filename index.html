@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STUDYTECH Béjaia - Système de Radar à Ultrasons</title>
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
-
 <body>
     <nav class="navbar">
         <div class="logo">
@@ -25,13 +23,12 @@
 
     <section class="hero">
         <div id="hero-3d"></div>
+        
         <div class="hero-content">
             <h1>Système de Radar à Ultrasons</h1>
-            <p>Ce site web présente un projet de système de radar ultrasonique à courte portée, développé par Abdelhakim
-                Brahmi de l'Université de Béjaïa. Le contenu détaille les composants du projet, le schéma électrique, le
-                code source, la logique de fonctionnement et les défis rencontrés, constituant ainsi un portfolio
-                technique.</p>
+            <p>Ce site web présente un projet de système de radar ultrasonique à courte portée, développé par Abdelhakim Brahmi de l'Université de Béjaïa. Le contenu détaille les composants du projet, le schéma électrique, le code source et la logique de fonctionnement.</p>
         </div>
+        
         <div class="identity-cards">
             <div class="card creator-card animate-on-scroll fade-up">
                 <h3>Concepteur</h3>
@@ -43,6 +40,104 @@
             </div>
         </div>
     </section>
+    <section id="hardware" class="hardware-section">
+    <h2 class="section-title animate-on-scroll fade-up">Matériel & Outils</h2>
+    
+    <div class="tech-category">
+        <h3 class="category-title animate-on-scroll slide-right"><i class="fas fa-microchip"></i> Composants Électroniques</h3>
+        <div class="tech-grid">
+            
+            <div class="card tech-card animate-on-scroll fade-up">
+                <i class="fas fa-satellite-dish"></i>
+                <h4>HC-SR04</h4>
+                <p>Capteur Ultrason pour la détection précise des obstacles.</p>
+            </div>
+
+            <div class="card tech-card animate-on-scroll fade-up" style="transition-delay: 0.1s;">
+                <i class="fas fa-sync-alt"></i>
+                <h4>Servomoteur MG90s</h4>
+                <p>Moteur rotatif assurant un balayage à 360°.</p>
+            </div>
+
+            <div class="card tech-card animate-on-scroll fade-up" style="transition-delay: 0.2s;">
+                <i class="fas fa-network-wired"></i>
+                <h4>Câblage</h4>
+                <p>Fils de connexion mâle-mâle & mâle-femelle.</p>
+            </div>
+
+            <div class="card tech-card animate-on-scroll fade-up" style="transition-delay: 0.2s;">
+                <i class="fas fa-border-all"></i>
+                <h4>Breadboard</h4>
+                <p>Platine d'expérimentation pour le prototypage.</p>
+            </div>
+
+            <div class="card tech-card animate-on-scroll fade-up" style="transition-delay: 0.2s;">
+                <i class="fas fa-lightbulb"></i>
+                <h4>Indicateurs LED</h4>
+                <p>LEDs vertes et rouges pour l'état visuel.</p>
+            </div>
+
+            <div class="card tech-card animate-on-scroll fade-up" style="transition-delay: 0.2s;">
+                <i class="fas fa-volume-up"></i>
+                <h4>Buzzer Actif</h4>
+                <p>Signal sonore pour l'alerte de proximité.</p>
+            </div>
+            
+            <div class="card tech-card animate-on-scroll fade-up" style="transition-delay: 0.2s;">
+                <i class="fas fa-minus-square"></i>
+                <h4>Résistances</h4>
+                <p>220 Ohm pour la protection du circuit.</p>
+            </div>
+            <div class="card tech-card animate-on-scroll fade-up" style="transition-delay: 0.2s;">
+                <i class="fas fa-microchip"></i> 
+                <h4>Arduino UNO R3</h4>
+                <p>Le microcontrôleur central qui exécute le programme et traite les données.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="tech-category">
+        <h3 class="category-title animate-on-scroll slide-left"><i class="fas fa-laptop-code"></i> Logiciels & Outils</h3>
+        <div class="tech-grid">
+            
+            <div class="card tech-card animate-on-scroll fade-up">
+                <i class="fas fa-infinity"></i> <h4>Arduino IDE</h4>
+                <p>Écriture et téléversement du code de contrôle.</p>
+            </div>
+
+            <div class="card tech-card animate-on-scroll fade-up" style="transition-delay: 0.1s;">
+                <i class="fas fa-wave-square"></i>
+                <h4>Processing 4</h4>
+                <p>Visualisation graphique du radar en temps réel.</p>
+            </div>
+
+            <div class="card tech-card animate-on-scroll fade-up" style="transition-delay: 0.2s;">
+                <i class="fas fa-layer-group"></i>
+                <h4>Tinkercad</h4>
+                <p>Simulation et dessin du schéma électrique.</p>
+            </div>
+
+            <div class="card tech-card animate-on-scroll fade-up" style="transition-delay: 0.3s;">
+                <i class="fab fa-github"></i>
+                <h4>Github</h4>
+                <p>Gestion de version & Hébergement du code.</p>
+            </div>
+
+            <div class="card tech-card animate-on-scroll fade-up" style="transition-delay: 0.4s;">
+                <i class="fas fa-code"></i>
+                <h4>VS Code</h4>
+                <p>Éditeur pour le développement du site web.</p>
+            </div>
+
+            <div class="card tech-card animate-on-scroll fade-up" style="transition-delay: 0.5s;">
+                <i class="fas fa-server"></i>
+                <h4>Vercel</h4>
+                <p>Déploiement continu et hébergement web.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
     <section class="visual-identity" id="identity">
         <h2 class="identity-title animate-on-scroll fade-up">THE PROJECT JOURNEY</h2>
         <div class="identity-timeline">
@@ -51,64 +146,41 @@
             <div class="timeline-item animate-on-scroll slide-right" style="top: 0;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <p
-                        style="color: #00A8CC; font-size: 16px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 5px;">
-                        01. Découverte & Conception
-                    </p>
-                    <p style="color: #d1d1d1; font-size: 0.95rem; margin-top: 5px; line-height: 1.5;">
-                        Analyse des exigences du projet et élaboration de l'architecture système et des maquettes UI.
-                    </p>
+                    <p style="color: #00A8CC; font-weight: bold; text-transform: uppercase;">01. Découverte & Conception</p>
+                    <p style="color: #d1d1d1;">Analyse des exigences du projet et élaboration de l'architecture système.</p>
                 </div>
             </div>
 
             <div class="timeline-item animate-on-scroll slide-left" style="top: 25px;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <p
-                        style="color: #00A8CC; font-size: 16px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 5px;">
-                        02. Développement du prototype
-                    </p>
-                    <p style="color: #d1d1d1; font-size: 0.95rem; margin-top: 5px; line-height: 1.5;">
-                        Construire la fonctionnalité matérielle principale et établir des protocoles de communication
-                        stables.
-                    </p>
+                    <p style="color: #00A8CC; font-weight: bold; text-transform: uppercase;">02. Développement du prototype</p>
+                    <p style="color: #d1d1d1;">Construction de la fonctionnalité matérielle et des protocoles de communication.</p>
                 </div>
             </div>
 
             <div class="timeline-item animate-on-scroll slide-right" style="top: 50px;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <p
-                        style="color: #00A8CC; font-size: 16px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 5px;">
-                        03. Intégration UI
-                    </p>
-                    <p style="color: #d1d1d1; font-size: 0.95rem; margin-top: 5px; line-height: 1.5;">
-                        Développement de la couche de présentation interactive et connexion au backend matériel.
-                    </p>
+                    <p style="color: #00A8CC; font-weight: bold; text-transform: uppercase;">03. Intégration UI</p>
+                    <p style="color: #d1d1d1;">Développement de l'interface interactive et connexion au backend.</p>
                 </div>
             </div>
 
             <div class="timeline-item animate-on-scroll slide-left" style="top: 75px;">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <p
-                        style="color: #00A8CC; font-size: 16px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 5px;">
-                        essai et amelioration
-                    </p>
-                    <p style="color: #d1d1d1; font-size: 0.95rem; margin-top: 5px; line-height: 1.5;">
-                        Tests finaux et amelioration du projet finale pour assurer une performance sans faille.
-                    </p>
+                    <p style="color: #00A8CC; font-weight: bold; text-transform: uppercase;">Test et Amélioration</p>
+                    <p style="color: #d1d1d1;">Tests finaux pour assurer une performance sans faille.</p>
                 </div>
             </div>
         </div>
-        </div>
+        
         <div class="timeline-cta" style="margin-top: 100px;">
             <a href="presentation.html" class="cta-button">Démarrer la Présentation</a>
         </div>
     </section>
-    <script src="script.js"></script>
-    <script src="hero-3d.js"></script>
-    <script src="script.js"></script>
-</body>
 
+    <script src="script.js"></script>
+    <script src="hero-3d.js"></script> </body>
 </html>

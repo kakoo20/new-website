@@ -11,21 +11,30 @@ document.addEventListener('DOMContentLoaded', () => {
     container.appendChild(renderer.domElement);
 
     // Create Radar Sphere (Wireframe)
-    const geometry = new THREE.SphereGeometry(2, 24, 24);
+    const geometry = new THREE.SphereGeometry(2.2, 24, 24);
     const material = new THREE.MeshBasicMaterial({
-        color: 0x00A8CC, // Matches your neon-cyan
+        color: 0x00A8CC,
         wireframe: true,
         transparent: true,
-        opacity: 0.3
+        opacity: 0.2
     });
     const sphere = new THREE.Mesh(geometry, material);
     scene.add(sphere);
 
-    // Add a "Pulse" Ring
+    // Add a central core
+    const coreGeo = new THREE.SphereGeometry(0.5, 16, 16);
+    const coreMat = new THREE.MeshBasicMaterial({ color: 0x00A8CC });
+    const core = new THREE.Mesh(coreGeo, coreMat);
+    scene.add(core);
+
+    // Add a pulsing ring
     const ringGeo = new THREE.TorusGeometry(2, 0.02, 16, 100);
-    const ringMat = new THREE.MeshBasicMaterial({ color: 0x00A8CC, transparent: true });
+    const ringMat = new THREE.MeshBasicMaterial({ color: 0x00A8CC, transparent: true, opacity: 0.8 });
     const ring = new THREE.Mesh(ringGeo, ringMat);
-    ring.rotation.x = Math.PI / 2;
+    ring.rotation.x = Math.PI / 2; 
+    // Rotate ring to face slightly towards camera
+    ring.rotation.x = 1.8;
+    ring.rotation.y = 0.5;
     scene.add(ring);
 
     camera.position.z = 5;
@@ -34,17 +43,18 @@ document.addEventListener('DOMContentLoaded', () => {
     function animate() {
         requestAnimationFrame(animate);
         
-        sphere.rotation.y += 0.005;
-        sphere.rotation.x += 0.002;
+        // Rotate sphere
+        sphere.rotation.y += 0.003;
+        sphere.rotation.x += 0.001;
 
-        // Pulse effect for the ring
-        ring.scale.x += 0.02;
-        ring.scale.y += 0.02;
-        ring.material.opacity -= 0.01;
+        // Pulse effect
+        ring.scale.x += 0.01;
+        ring.scale.y += 0.01;
+        ring.material.opacity -= 0.005;
 
-        if (ring.scale.x > 2.5) {
+        if (ring.scale.x > 2) {
             ring.scale.set(1, 1, 1);
-            ring.material.opacity = 1;
+            ring.material.opacity = 0.8;
         }
 
         renderer.render(scene, camera);
