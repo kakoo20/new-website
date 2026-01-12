@@ -95,7 +95,7 @@ body {
 .presentation-section:nth-child(even) { justify-content: flex-end; }
 
 .content-box {
-    background: rgba(5, 5, 5, 0.7); backdrop-filter: blur(15px);
+    background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(15px);
     padding: 2rem; /* Slightly smaller padding */
     border-radius: 20px;
     border: 1px solid rgba(0, 168, 204, 0.3);
@@ -107,7 +107,7 @@ body {
 .content-box h2 { color: var(--neon-cyan); font-size: 2rem; margin-bottom: 1rem; }
 
 /* Timeline Styles */
-.visual-identity { padding: 6rem 5%; background: rgba(5, 5, 5, 0.9); }
+.visual-identity { padding: 6rem 5%; background: rgba(0, 0, 0, 0.5); }
 .identity-title { text-align: center; color: var(--neon-cyan); margin-bottom: 4rem; font-size: 3rem; }
 .identity-timeline { position: relative; max-width: 1200px; margin: 0 auto; }
 .timeline-line { position: absolute; left: 50%; top: 0; height: 100%; width: 4px; background: var(--neon-cyan); transform: translateX(-50%); }
@@ -137,7 +137,7 @@ body {
 /* --- HARDWARE & SOFTWARE SECTION STYLES --- */
 .hardware-section {
     padding: 6rem 5%;
-    background: rgba(5, 5, 5, 0.8); /* Slightly distinct background */
+    background: rgba(0, 0, 0, 0.5); /* Slightly distinct background */
 }
 
 .section-title {
@@ -208,7 +208,7 @@ body {
     display: flex;
     align-items: center;
     gap: 2rem;
-    background: rgba(5, 5, 5, 0.8);
+    background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
@@ -231,7 +231,7 @@ body {
 
 .back-link:hover {
     background: var(--neon-cyan);
-    color: #000 !important; /* Devient noir au survol pour le contraste */
+    color: #00000073 !important; /* Devient noir au survol pour le contraste */
     box-shadow: 0 0 15px var(--neon-cyan);
     transform: translateX(-5px);
 }
@@ -367,4 +367,206 @@ body {
 .alerte-step .algo-number {
     color: #ff4d4d;
     border-right-color: rgba(255, 77, 77, 0.3);
+}
+/* Séparateur horizontal dans la boîte */
+.box-divider {
+    border: none;
+    border-top: 1px solid rgba(0, 168, 204, 0.2);
+    margin: 30px 0;
+}
+
+.technical-notes {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Sépare en deux colonnes */
+    gap: 20px;
+}
+
+.note-block {
+    background: rgba(0, 168, 204, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px dashed rgba(0, 168, 204, 0.3);
+}
+
+.note-block h3 {
+    font-size: 1rem;
+    color: var(--neon-cyan);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.note-block p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0;
+    color: #ccc;
+}
+
+/* Style spécifique pour la sécurité */
+.note-block.security {
+    background: rgba(255, 77, 77, 0.03);
+    border-color: rgba(255, 77, 77, 0.3);
+}
+
+.note-block.security h3 {
+    color: #ff4d4d;
+}
+
+/* Adaptation mobile : une seule colonne si l'écran est petit */
+@media (max-width: 768px) {
+    .technical-notes {
+        grid-template-columns: 1fr;
+    }
+}
+/* Container Défis */
+.challenge-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.challenge-card, .solution-card {
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.5); /* Votre Black-50 */
+    backdrop-filter: blur(10px);
+}
+
+.challenge-card {
+    border-left: 4px solid #ff9800; /* Orange pour l'alerte/défi */
+}
+
+.solution-card {
+    border-left: 4px solid #4caf50; /* Vert pour la réussite */
+    margin-left: 30px; /* Décalage pour l'effet de réponse */
+}
+
+/* Badges */
+.badge-defi, .badge-solution {
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 4px;
+    width: fit-content;
+    margin-bottom: 10px;
+}
+
+.badge-defi { background: #ff9800; color: #000; }
+.badge-solution { background: #4caf50; color: #000; }
+
+/* Bouton mini-download pour cette section */
+.mini-download {
+    margin-top: 15px;
+    background: rgba(76, 175, 80, 0.1) !important;
+    border-color: rgba(76, 175, 80, 0.3) !important;
+    min-width: auto;
+}
+
+.mini-download:hover {
+    background: rgba(76, 175, 80, 0.2) !important;
+    border-color: #4caf50 !important;
+}
+
+/* Code inline style */
+code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 5px;
+    border-radius: 4px;
+    color: var(--neon-cyan);
+    font-family: monospace;
+}
+.conclusion-intro {
+    font-style: italic;
+    color: #bbb;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.conclusion-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.conclusion-list li {
+    font-size: 0.9rem;
+    color: #eee;
+    margin-bottom: 8px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.conclusion-list li::before {
+    content: "•";
+    color: var(--neon-cyan);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.conclusion-final {
+    margin-top: 30px;
+    padding: 15px;
+    background: rgba(0, 168, 204, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--neon-cyan);
+    color: #fff;
+    font-weight: 500;
+}
+/* ADD THIS AT THE VERY END OF YOUR CSS FILE */
+.timeline-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 15rem;   /* Adjust this number (e.g., 20rem) to lower it more */
+    padding-bottom: 5rem;
+}
+/* --- THANK YOU & EMAIL SECTION --- */
+.thank-you-section {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.thank-you-title {
+    font-size: 2.5rem !important;
+    margin-bottom: 1.5rem;
+}
+
+.thank-you-text {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.email-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid var(--neon-cyan);
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+
+.copy-btn {
+    background: var(--neon-cyan);
+    color: #000;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.copy-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--neon-cyan);
 }

@@ -76,6 +76,25 @@
         <p>Voici comment le système traite l'information en temps réel pour assurer la détection :</p>
 
         <div class="algo-container">
+            <hr class="box-divider">
+
+<div class="technical-notes">
+    <div class="note-block">
+        <h3><i class="fas fa-microchip"></i> Note Technique</h3>
+        <p>
+            La vitesse du son utilisée pour les calculs est de <strong>0,034 cm/μs</strong> pour obtenir des résultats précis en centimètres. 
+            Le servomoteur effectue un balayage sur une plage de <strong>0° à 180°</strong> avec un pas de <strong>2° à 4°</strong>, assurant une couverture radar optimale sans zones d'ombre.
+        </p>
+    </div>
+
+    <div class="note-block security">
+        <h3><i class="fas fa-shield-alt"></i> Sécurité Logicielle</h3>
+        <p>
+            Le système est programmé pour rester en état d'alerte tant que l'obstacle est présent. 
+            Le balayage et le fonctionnement normal ne reprennent automatiquement que lorsque l'objet détecté est retiré de la zone critique.
+        </p>
+    </div>
+</div>
             <div class="algo-step">
                 <div class="algo-number">1</div>
                 <div class="algo-text">
@@ -96,7 +115,7 @@
                 <div class="algo-number">3</div>
                 <div class="algo-text">
                     <strong>Traitement :</strong> 
-                    L'Arduino calcule le temps de vol ($t$) et le convertit en distance ($d = \frac{v \times t}{2}$), où $v$ est la vitesse du son.
+                    L'Arduino calcule le temps de vol (t) et le convertit en distance [d = (v * t) / 2], où v est la vitesse du son.
                 </div>
             </div>
 
@@ -104,15 +123,102 @@
                 <div class="algo-number">4</div>
                 <div class="algo-text">
                     <strong>Alerte :</strong> 
-                    Si $d < 30$ cm, le buzzer s'active et l'interface affiche l'alerte en rouge. Le servomoteur s'immobilise, les <strong>LED rouges</strong> s'allument et les <strong>LED vertes</strong> s'éteignent.
+                    Si d < 30 cm, le buzzer s'active et l'interface affiche l'alerte en rouge. Le servomoteur s'immobilise, les <strong>LED rouges</strong> s'allument et les <strong>LED vertes</strong> s'éteignent.
                 </div>
             </div>
         </div>
     </div>
 </section>
+<section class="presentation-section">
+    <div class="content-box wide-box">
+        <h2><i class="fas fa-exclamation-triangle"></i> Défis & Solutions</h2>
+        
+        <div class="challenge-container">
+            <div class="challenge-card">
+                <div class="badge-defi">DÉFI</div>
+                <h3>Gestion de la Rotation Continue</h3>
+                <p>
+                    Le servomoteur utilisé est un <strong>MG-90S 360°</strong>. Contrairement à un servo classique, il ne permet pas de fixer un angle précis. 
+                    La commande <code>write(angle)</code> définit ici la vitesse et le sens de rotation (90 = arrêt, 0/180 = vitesse max).
+                </p>
+            </div>
 
+            <div class="solution-card">
+                <div class="badge-solution">SOLUTION</div>
+                <p>
+                    J'ai implémenté une <strong>logique basée sur le contrôle temporel</strong>. En calibrant précisément la durée d'activation et la vitesse, j'ai pu simuler un balayage radar régulier malgré l'absence de retour de position.
+                </p>
+                
+                <a href="servo_180.ino" download class="download-card mini-download">
+                    <i class="fas fa-file-code"></i>
+                    <div class="card-text">
+                        <strong>Code de Calibration Servo</strong>
+                        <span>Format .ino</span>
+                    </div>
+                    <i class="fas fa-download"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="presentation-section">
+    <div class="content-box wide-box">
+        <h2><i class="fas fa-flag-checkered"></i> Conclusion & Perspectives</h2>
+        
+        <p class="conclusion-intro">
+            La réalisation de ce radar à ultrasons a été une expérience enrichissante, me permettant de lier la programmation logicielle à la réalité physique des composants. Malgré les contraintes matérielles, comme l'adaptation du servomoteur MG-90S, j'ai pu livrer un système fonctionnel et interactif.
+        </p>
+
+        <div class="technical-notes"> <div class="note-block">
+                <h3><i class="fas fa-graduation-cap"></i> Compétences acquises</h3>
+                <ul class="conclusion-list">
+                    <li><strong>Capteurs :</strong> Acquisition de données et conversion temporelle en données physiques (cm).</li>
+                    <li><strong>Systèmes Embarqués :</strong> Architecture et programmation Arduino.</li>
+                    <li><strong>Signaux :</strong> Gestion du PWM et de la logique temporelle.</li>
+                    <li><strong>Développement IHM :</strong> Visualisation radar en temps réel via Processing.</li>
+                </ul>
+            </div>
+
+            <div class="note-block">
+                <h3><i class="fas fa-rocket"></i> Évolutions futures</h3>
+                <ul class="conclusion-list">
+                    <li>Remplacement de l'ultrason par un capteur <strong>TF-Luna (LIDAR)</strong>.</li>
+                    <li>Ajout d'une communication sans fil <strong>(Bluetooth/Wi-Fi)</strong>.</li>
+                    <li>Optimisation de la consommation énergétique.</li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="conclusion-final">
+            Ce projet confirme mon désir d'intégrer la <strong>Licence EEA</strong> de votre université. Je suis impatient d'approfondir mes connaissances en systèmes embarqués et en automatique au sein de vos laboratoires.
+        </p>
+    </div>
+</section>
     
 
     <script src="presentation.js"></script>
+    <section class="presentation-section">
+    <div class="content-box wide-box thank-you-section">
+        <h2 class="thank-you-title">Merci de votre attention</h2>
+        <p class="thank-you-text">
+            Je reste à votre entière disposition pour toute information complémentaire ou pour répondre à vos questions concernant les détails techniques de ce projet lors d'un éventuel entretien.
+        </p>
+
+        <div class="email-box">
+            <span id="email-text">abdelhakim.brahmi@tech.univ-bejaia.dz</span>
+            <button onclick="copyEmail()" class="copy-btn" title="Copier l'email">
+                <i class="fas fa-copy"></i> Copier
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+function copyEmail() {
+    const email = document.getElementById('email-text').innerText;
+    navigator.clipboard.writeText(email);
+    alert('Email copié dans le presse-papier !');
+}
+</script>
 </body>
 </html>
