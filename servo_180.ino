@@ -1,4 +1,4 @@
-#include 
+#include <Servo.h>
 
 Servo myServo;
 const int PIN_SERVO = 9;
@@ -6,7 +6,7 @@ const int SPEED_CCW = 100;
 const int SPEED_CW  = 83;   
 const int STOP_VAL  = 90;   
 const int TIME_TURN = 2100; 
-const int TIME_WAIT = 1000; 
+const int TIME_WAIT = 200; 
 
 void setup() {
   myServo.attach(PIN_SERVO);
