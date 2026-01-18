@@ -570,3 +570,128 @@ code {
     transform: scale(1.05);
     box-shadow: 0 0 10px var(--neon-cyan);
 }
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.gallery-card {
+    background: var(--glass-bg);
+    border: 1px solid rgba(0, 168, 204, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 20px rgba(0, 168, 204, 0.2);
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* This prevents the image from stretching */
+    display: block;
+}
+
+.gallery-info {
+    padding: 20px;
+    text-align: center;
+}
+/* Container for the square grid */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* The Card/Box */
+.gallery-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 168, 204, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    
+    /* This is the magic line for 1:1 squares */
+    aspect-ratio: 1 / 1; 
+}
+
+/* The wrapper and image */
+.image-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops the image to fill the square without stretching */
+    display: block;
+}
+
+/* Hover effect to make it look "Tech" */
+.gallery-card:hover {
+    transform: scale(1.02);
+    border-color: #00a8cc;
+    box-shadow: 0 0 20px rgba(0, 168, 204, 0.2);
+}
+/* 1. Ensure the container hides the 'overflow' so the zoom stays neat */
+.gallery-card {
+    position: relative;
+    overflow: hidden; /* This clips the image so it doesn't overlap other cards */
+    border-radius: 12px;
+    border: 1px solid rgba(0, 168, 204, 0.3);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+/* Position the button inside the square */
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.mini-zoom-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 168, 204, 0.8);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.mini-zoom-btn:hover {
+    background: #00d4ff;
+    transform: scale(1.1);
+}
+
+/* Very simple Lightbox for the zoom */
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border: 2px solid #00a8cc;
+}

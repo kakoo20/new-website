@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie - STUDYTECH Béjaia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="background: #0a0a0a; color: white;"> <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-bolt"></i>
+            <span>STUDYTECH Béjaia</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="presentation.html" class="cta-button">Retour Présentation</a></li>
+        </ul>
+    </nav>
+
+    <main style="padding: 120px 20px; max-width: 1200px; margin: 0 auto;">
+        
+        <h2 style="text-align: center; color: #00a8cc; margin-bottom: 40px; font-size: 2.5rem;">
+            <i class="fas fa-camera"></i> Galerie du Projet
+        </h2>
+
+        <div class="project-gallery">
+            
+            <div class="gallery-card">
+                <div class="image-wrapper">
+                    <img src="images/photo1.jpg" alt="Photo 1">
+                    <button class="mini-zoom-btn" onclick="zoom(this)">
+            <i class="fas fa-search-plus"></i>
+        </button>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <div class="image-wrapper">
+                    <img src="images/photo2.jpg" alt="Photo 2">
+                    <button class="mini-zoom-btn" onclick="zoom(this)">
+            <i class="fas fa-search-plus"></i>
+        </button>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <div class="image-wrapper">
+                    <img src="images/photo3.jpg" alt="Photo 3">
+                    <button class="mini-zoom-btn" onclick="zoom(this)">
+            <i class="fas fa-search-plus"></i>
+        </button>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <div class="image-wrapper">
+                    <img src="images/photo4.jpg" alt="Photo 4">
+                    <button class="mini-zoom-btn" onclick="zoom(this)">
+            <i class="fas fa-search-plus"></i>
+        </button>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <div class="image-wrapper">
+                    <img src="images/photo5.jpg" alt="Photo 5">
+                    <button class="mini-zoom-btn" onclick="zoom(this)">
+            <i class="fas fa-search-plus"></i>
+        </button>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <div class="image-wrapper">
+                    <img src="images/photo6.jpg" alt="Photo 6">
+                    <button class="mini-zoom-btn" onclick="zoom(this)">
+            <i class="fas fa-search-plus"></i>
+        </button>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <div class="image-wrapper">
+                    <img src="images/photo7.jpg" alt="Photo 7">
+                    <button class="mini-zoom-btn" onclick="zoom(this)">
+            <i class="fas fa-search-plus"></i>
+        </button>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <div class="image-wrapper">
+                    <img src="images/photo8.jpg" alt="Photo 8">
+                    <button class="mini-zoom-btn" onclick="zoom(this)">
+            <i class="fas fa-search-plus"></i>
+        </button>
+                </div>
+            </div>
+
+            </div>
+    </main>
+<div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="">
+</div>
+<script>
+    function zoom(btn) {
+        // 1. Find the lightbox elements
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        
+        // 2. Find the image that is inside the same card as the button
+        // btn.parentElement is the .image-wrapper
+        const clickedImg = btn.parentElement.querySelector('img');
+        
+        // 3. Put the photo into the lightbox and show it
+        lightboxImg.src = clickedImg.src;
+        lightbox.style.display = 'flex';
+    }
+</script>
+</body>
+</html>
