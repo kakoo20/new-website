@@ -8,21 +8,20 @@ float pixDist;
 void setup() {
   size(1200, 700); 
   smooth();
-  // IMPORTANT: Ensure COM port matches your Arduino IDE
   myPort = new Serial(this, "COM4", 9600); 
   myPort.bufferUntil('.'); 
   background(0);
 }
 
 void draw() {
-  fill(0, 15); // Trail effect
+  fill(0, 15);
   noStroke();
   rect(0, 0, width, height);
   
   drawRadar();
   drawLine();
   drawObject();
-  drawText(); // Added labels
+  drawText(); 
 }
 
 void serialEvent(Serial myPort) {
@@ -33,9 +32,6 @@ void serialEvent(Serial myPort) {
     if (list.length == 2) {
       int rawAngle = int(list[0]);
       distance = int(list[1]);
-      
-      // FLIP LOGIC: 
-      // If 0 shows as 180 and 180 shows as 0, this line fixes it:
       angle = 180 - rawAngle; 
     }
   }
@@ -48,7 +44,7 @@ void drawRadar() {
   strokeWeight(2);
   stroke(98, 245, 31);
   
-  // Distance Circles
+  
   arc(0, 0, (width-width/6), (width-width/6), PI, TWO_PI);
   arc(0, 0, (width-width/3), (width-width/3), PI, TWO_PI);
   arc(0, 0, (width-width/1.5), (width-width/1.5), PI, TWO_PI);
@@ -87,7 +83,7 @@ void drawObject() {
   translate(width/2, height - height/10);
   strokeWeight(10);
   stroke(255, 10, 10); 
-  pixDist = distance * ((height-height/10)*0.035); // Adjusted scale
+  pixDist = distance * ((height-height/10)*0.035); 
   
   if (distance < 25 && distance > 0) {
     line(pixDist*cos(radians(angle+180)), pixDist*sin(radians(angle+180)), 
